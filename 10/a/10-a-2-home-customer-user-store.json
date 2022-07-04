@@ -1,5 +1,5 @@
 {
-  "typeId": "UmVhZFdyaXRlTERBUFVzZXJTdG9yZU1hbmFnZXI",
+  "typeId": "VW5pcXVlSURSZWFkV3JpdGVMREFQVXNlclN0b3JlTWFuYWdlcg",
   "name": "home-customer",
   "description": "Connects to the Guradio-Home customer user base",
   "properties": [
@@ -128,6 +128,10 @@
       "value": "uid"
     },
     {
+      "name": "UserIDAttribute",
+      "value": "scimId"
+    },
+    {
       "name": "UserSearchBase",
       "value": "ou=users,dc=guardio,dc=com"
     },
@@ -137,7 +141,7 @@
     },
     {
       "name": "Class",
-      "value": "org.wso2.carbon.user.core.ldap.ReadWriteLDAPUserStoreManager"
+      "value": "org.wso2.carbon.user.core.ldap.UniqueIDReadWriteLDAPUserStoreManager"
     },
     {
       "name": "LDAPConnectionTimeout",
@@ -193,7 +197,7 @@
     },
     {
       "name": "ConnectionPassword",
-      "value": "gu@rdioldapadmin#2020"
+      "value": "gu@rdioldapadmin#47"
     },
     {
       "name": "CountRetrieverClass",
