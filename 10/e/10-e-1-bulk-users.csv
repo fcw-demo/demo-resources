@@ -1,4 +1,4 @@
-UserName,Claims
-oliver@yahoo.com,http://wso2.org/claims/emailaddress=oliver@yahoo.com,http://wso2.org/claims/country=US
-phil@gmail.com,http://wso2.org/claims/emailaddress=phil@gmail.com,http://wso2.org/claims/country=UK
-quin@live.com,http://wso2.org/claims/emailaddress=quin@live.com,http://wso2.org/claims/country=KR
+UserName,Password,Claims
+oliver@yahoo.com,gu@rdiologin#47,http://wso2.org/claims/emailaddress=oliver@yahoo.com,http://wso2.org/claims/country=US
+phil@gmail.com,gu@rdiologin#47,http://wso2.org/claims/emailaddress=phil@gmail.com,http://wso2.org/claims/country=UK
+quin@live.com,gu@rdiologin#47,http://wso2.org/claims/emailaddress=quin@live.com,http://wso2.org/claims/country=KR
