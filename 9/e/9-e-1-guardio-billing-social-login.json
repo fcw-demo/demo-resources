@@ -1,0 +1,35 @@
+{
+    "authenticationSequence": {
+        "attributeStepId": 1,
+        "steps": [
+            {
+                "id": 1,
+                "options": [
+                    {
+                        "idp": "LOCAL",
+                        "authenticator": "BasicAuthenticator"
+                    },
+                    {
+                        "authenticator": "FacebookAuthenticator",
+                        "idp": "facebook"
+                    },
+                    {
+                        "authenticator": "GoogleOIDCAuthenticator",
+                        "idp": "google"
+                    },
+                    {
+                        "authenticator": "TwitterAuthenticator",
+                        "idp": "twitter"
+                    },
+                    {
+                        "authenticator": "OpenIDConnectAuthenticator",
+                        "idp": "Apple"
+                    }
+                ]
+            }
+        ],
+        "subjectStepId": 1,
+        "type": "USER_DEFINED",
+        "script": "var onLoginRequest = function(context) {\n    executeStep(1);\n};\n"
+    }
+}
