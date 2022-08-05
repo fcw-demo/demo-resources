@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "d522d65f-f2e1-4b3a-a991-c3a9298a8f32",
+		"name": "Risk-based Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10461380"
+	},
+	"item": [
+		{
+			"name": "Publish Transaction Event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"event\":{\"username\": \"daniel@ciamdemo.net\",\"transaction\": 12000}}"
+				},
+				"url": {
+					"raw": "https://ei.wso2isdemo.com/transaction",
+					"protocol": "https",
+					"host": [
+						"ei",
+						"wso2isdemo",
+						"com"
+					],
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset User Risk Score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event\": {\n        \"username\": \"daniel@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"expectedRiskScore\": 0.0\n    }\n}"
+				},
+				"url": {
+					"raw": "http://analytics.wso2isdemo.com:8082/IS_ANALYTICS_RISK_BASED_LOGIN/ResetRiskScoreStream",
+					"protocol": "http",
+					"host": [
+						"analytics",
+						"wso2isdemo",
+						"com"
+					],
+					"port": "8082",
+					"path": [
+						"IS_ANALYTICS_RISK_BASED_LOGIN",
+						"ResetRiskScoreStream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Risk Score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event\": {\n        \"username\": \"norah@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"expectedRiskScore\": 8.0\n    }\n}"
+				},
+				"url": {
+					"raw": "http://analytics.wso2isdemo.com:8082/IS_ANALYTICS_RISK_BASED_LOGIN/ResetRiskScoreStream",
+					"protocol": "http",
+					"host": [
+						"analytics",
+						"wso2isdemo",
+						"com"
+					],
+					"port": "8082",
+					"path": [
+						"IS_ANALYTICS_RISK_BASED_LOGIN",
+						"ResetRiskScoreStream"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+
