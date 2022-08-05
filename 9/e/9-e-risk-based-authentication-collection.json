@@ -26,7 +26,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"event\":{\"username\": \"kelsey@ciamdemo.net\",\"transaction\": 12000}}"
+					"raw": "{\"event\":{\"username\": \"daniel@ciamdemo.net\",\"transaction\": 12000}}"
 				},
 				"url": {
 					"raw": "https://ei.wso2isdemo.com/transaction",
@@ -59,7 +59,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"event\": {\n        \"username\": \"kelsey@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"expectedRiskScore\": 0.0\n    }\n}"
+					"raw": "{\n    \"event\": {\n        \"username\": \"daniel@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"expectedRiskScore\": 0.0\n    }\n}"
 				},
 				"url": {
 					"raw": "http://analytics.wso2isdemo.com:8082/IS_ANALYTICS_RISK_BASED_LOGIN/ResetRiskScoreStream",
