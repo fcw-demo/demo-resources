@@ -1,0 +1,762 @@
+{
+	"info": {
+		"_postman_id": "d2eb4d3e-3135-4e9d-a9f3-b84723d3a7b1",
+		"name": "FCW2022 Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10461380"
+	},
+	"item": [
+		{
+			"name": "Customer Identity Verification(IDV), and Registration",
+			"item": [
+				{
+					"name": "Classic Registration Invite",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ei.wso2isdemo.com/invite?email=salma@ciamdemo.net",
+							"protocol": "https",
+							"host": [
+								"ei",
+								"wso2isdemo",
+								"com"
+							],
+							"path": [
+								"invite"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "salma@ciamdemo.net"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Orchestration",
+			"item": [
+				{
+					"name": "Create User Store",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{user-name}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "gu@rdioadmin#47",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"typeId\": \"VW5pcXVlSURSZWFkV3JpdGVMREFQVXNlclN0b3JlTWFuYWdlcg\",\n  \"name\": \"home-customer\",\n  \"description\": \"Connects to the Guradio-Home customer user base\",\n  \"properties\": [\n    {\n      \"name\": \"BulkImportSupported\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"UserDNPattern\",\n      \"value\": \"\"\n    },\n    {\n      \"name\": \"GroupNameListFilter\",\n      \"value\": \"(objectClass=groupOfNames)\"\n    },\n    {\n      \"name\": \"BackLinksEnabled\",\n      \"value\": \"false\"\n    },\n    {\n      \"name\": \"defaultRealmName\",\n      \"value\": \"guardio.com\"\n    },\n    {\n      \"name\": \"PasswordJavaScriptRegEx\",\n      \"value\": \"^[\\\\S]{5,30}$\"\n    },\n    {\n      \"name\": \"MaxUserNameListLength\",\n      \"value\": \"100\"\n    },\n    {\n      \"name\": \"WriteGroups\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"LDAPInitialContextFactory\",\n      \"value\": \"com.sun.jndi.ldap.LdapCtxFactory\"\n    },\n    {\n      \"name\": \"ConnectionRetryDelay\",\n      \"value\": \"120000\"\n    },\n    {\n      \"name\": \"StartTLSEnabled\",\n      \"value\": \"false\"\n    },\n    {\n      \"name\": \"EmptyRolesAllowed\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"UserNameJavaScriptRegEx\",\n      \"value\": \"^[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,4}$\"\n    },\n    {\n      \"name\": \"ConnectionPoolingEnabled\",\n      \"value\": \"false\"\n    },\n    {\n      \"name\": \"ClaimOperationsSupported\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"MaxRoleNameListLength\",\n      \"value\": \"100\"\n    },\n    {\n      \"name\": \"ConnectionURL\",\n      \"value\": \"ldap://home.guardio.com:10389\"\n    },\n    {\n      \"name\": \"Disabled\",\n      \"value\": \"false\"\n    },\n    {\n      \"name\": \"MultiAttributeSeparator\",\n      \"value\": \",\"\n    },\n    {\n      \"name\": \"RoleDNPattern\",\n      \"value\": \"\"\n    },\n    {\n      \"name\": \"RetryAttempts\",\n      \"value\": \"0\"\n    },\n    {\n      \"name\": \"PasswordJavaRegEx\",\n      \"value\": \"^[\\\\S]{5,30}$\"\n    },\n    {\n      \"name\": \"ReadOnly\",\n      \"value\": \"false\"\n    },\n    {\n      \"name\": \"DomainName\",\n      \"value\": \"home-customer\"\n    },\n    {\n      \"name\": \"UserNameJavaRegEx\",\n      \"value\": \"^[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,4}\"\n    },\n    {\n      \"name\": \"UserEntryObjectClass\",\n      \"value\": \"identityPerson\"\n    },\n    {\n      \"name\": \"UserRolesCacheEnabled\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"MembershipAttributeRange\",\n      \"value\": \"0\"\n    },\n    {\n      \"name\": \"UserNameSearchFilter\",\n      \"value\": \"(&(objectClass=person)(uid=?))\"\n    },\n    {\n      \"name\": \"UserNameListFilter\",\n      \"value\": \"(objectClass=person)\"\n    },\n    {\n      \"name\": \"UserNameAttribute\",\n      \"value\": \"uid\"\n    },\n    {\n      \"name\": \"UserIDAttribute\",\n      \"value\": \"scimId\"\n    },\n    {\n      \"name\": \"UserSearchBase\",\n      \"value\": \"ou=users,dc=guardio,dc=com\"\n    },\n    {\n      \"name\": \"MembershipAttribute\",\n      \"value\": \"member\"\n    },\n    {\n      \"name\": \"Class\",\n      \"value\": \"org.wso2.carbon.user.core.ldap.UniqueIDReadWriteLDAPUserStoreManager\"\n    },\n    {\n      \"name\": \"LDAPConnectionTimeout\",\n      \"value\": \"5000\"\n    },\n    {\n      \"name\": \"MemberOfAttribute\",\n      \"value\": \"\"\n    },\n    {\n      \"name\": \"ReadGroups\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"Description\",\n      \"value\": \"demo LDAP userstore.\"\n    },\n    {\n      \"name\": \"GroupSearchBase\",\n      \"value\": \"ou=groups,dc=guardio,dc=com\"\n    },\n    {\n      \"name\": \"DisplayNameAttribute\",\n      \"value\": \"\"\n    },\n    {\n      \"name\": \"java.naming.ldap.attributes.binary\",\n      \"value\": \"\"\n    },\n    {\n      \"name\": \"GroupNameAttribute\",\n      \"value\": \"cn\"\n    },\n    {\n      \"name\": \"ReadTimeout\",\n      \"value\": \"5000\"\n    },\n    {\n      \"name\": \"ConnectionName\",\n      \"value\": \"uid=admin,ou=system\"\n    },\n    {\n      \"name\": \"GroupNameSearchFilter\",\n      \"value\": \"(&(objectClass=groupOfNames)(cn=?))\"\n    },\n    {\n      \"name\": \"GroupEntryObjectClass\",\n      \"value\": \"groupOfNames\"\n    },\n    {\n      \"name\": \"UserIdSearchFilter\",\n      \"value\": \"(&(objectClass=person)(uid=?))\"\n    },\n    {\n      \"name\": \"ConnectionPassword\",\n      \"value\": \"gu@rdioldapadmin#47\"\n    },\n    {\n      \"name\": \"CountRetrieverClass\",\n      \"value\": \"\"\n    },\n    {\n      \"name\": \"RoleNameJavaRegEx\",\n      \"value\": \"[a-zA-Z0-9._-|//]{3,30}$\"\n    },\n    {\n      \"name\": \"RoleNameJavaScriptRegEx\",\n      \"value\": \"^[\\\\S]{3,30}$\"\n    },\n    {\n      \"name\": \"UserDNCacheEnabled\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"UsernameJavaRegExViolationErrorMsg\",\n      \"value\": \"Username pattern policy violated.\"\n    },\n    {\n      \"name\": \"PasswordJavaRegExViolationErrorMsg\",\n      \"value\": \"Password pattern policy violated.\"\n    },\n    {\n      \"name\": \"kdcEnabled\",\n      \"value\": \"false\"\n    },\n    {\n      \"name\": \"PasswordHashMethod\",\n      \"value\": \"PLAIN_TEXT\"\n    },\n    {\n      \"name\": \"UserCacheExpiryMilliseconds\",\n      \"value\": \"\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/userstores",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"userstores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable User Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\"operation\": \"REPLACE\",\"path\": \"/properties/Disabled\",\"value\": \"true\"}]"
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/userstores/aG9tZS1jdXN0b21lcg",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"userstores",
+								"aG9tZS1jdXN0b21lcg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Access Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "aVF234DE195c1dGkAYsl4JHESgMa",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "zmXZgIQATKNJZuT8y9gDJwPOkosa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded;charset=UTF-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "grant_type=client_credentials&scope=SYSTEM"
+						},
+						"url": {
+							"raw": "https://{{server-url}}/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Privacy, Customer Consent Management, and Profiling",
+			"item": [
+				{
+					"name": "Update Mobile Claim",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "life-customer/natalie@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "gu@rdiologin#47",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"Operations\":[{\"op\":\"replace\",\"value\":{\"phoneNumbers\":[{\"type\":\"mobile\",\"value\":\"4582305185\"}]}}],\"schemas\":[\"urn:ietf:params:scim:api:messages:2.0:PatchOp\"]}"
+						},
+						"url": {
+							"raw": "https://{{server-url}}/scim2/Me",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"scim2",
+								"Me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Risk-based Authentication",
+			"item": [
+				{
+					"name": "Publish Transaction Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event\": {\n        \"username\": \"daniel@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"riskScore\": 2.0\n    }\n}"
+						},
+						"url": {
+							"raw": "https://analytics.wso2isdemo.com/transaction",
+							"protocol": "https",
+							"host": [
+								"analytics",
+								"wso2isdemo",
+								"com"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset User Risk Score",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event\": {\n        \"username\": \"daniel@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"expectedRiskScore\": 0.0\n    }\n}"
+						},
+						"url": {
+							"raw": "https://analytics.wso2isdemo.com/riskscore",
+							"protocol": "https",
+							"host": [
+								"analytics",
+								"wso2isdemo",
+								"com"
+							],
+							"path": [
+								"riskscore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Risk Score",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event\": {\n        \"username\": \"norah@ciamdemo.net\",\n        \"userTenantDomain\": \"carbon.super\",\n        \"expectedRiskScore\": 8.0\n    }\n}"
+						},
+						"url": {
+							"raw": "https://analytics.wso2isdemo.com/riskscore",
+							"protocol": "https",
+							"host": [
+								"analytics",
+								"wso2isdemo",
+								"com"
+							],
+							"path": [
+								"riskscore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Typing Patterns",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZTc0MWUyNjA2MzVkMDU4YzFjNWIxNjYzNWM3NTc2YTg6YTgxMTk4Nzk0M2EyZjZhZjA5YWRiNWM2Yjg5MzYzZDI="
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "device",
+									"value": "all",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.typingdna.com/user/217b4c03605879e4dde0f9b093d93109f8f9692d0935ab3e66b943c5ee478930",
+							"protocol": "https",
+							"host": [
+								"api",
+								"typingdna",
+								"com"
+							],
+							"path": [
+								"user",
+								"217b4c03605879e4dde0f9b093d93109f8f9692d0935ab3e66b943c5ee478930"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partially update application by ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "gu@rdioadmin#47",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "john@guardio.com",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"authenticationSequence\": {\n        \"attributeStepId\": 1,\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"twitter\",\n                        \"authenticator\": \"TwitterAuthenticator\"\n                    },\n                    {\n                        \"idp\": \"Apple\",\n                        \"authenticator\": \"OpenIDConnectAuthenticator\"\n                    },\n                    {\n                        \"idp\": \"google\",\n                        \"authenticator\": \"GoogleOIDCAuthenticator\"\n                    },\n                    {\n                        \"idp\": \"facebook\",\n                        \"authenticator\": \"FacebookAuthenticator\"\n                    },\n                    {\n                        \"idp\": \"linkedin\",\n                        \"authenticator\": \"LinkedIn\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"BasicAuthenticator\"\n                    }\n                ]\n            }\n        ],\n        \"subjectStepId\": 1,\n        \"type\": \"USER_DEFINED\",\n        \"script\": \"var onLoginRequest = function(context) {\\n    executeStep(1);\\n};\\n\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								":applicationId"
+							],
+							"variable": [
+								{
+									"key": "applicationId",
+									"value": "5385aca3-e55b-4054-9d52-654be66af51e",
+									"description": "ID of the application."
+								}
+							]
+						},
+						"description": "This API provides the capability to partially update an application by ID.\n"
+					},
+					"response": [
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pickup\",\n    \"description\": \"This is the configuration for Pickup application.\",\n    \"imageUrl\": \"https://example.com/logo/my-logo.png\",\n    \"accessUrl\": \"https://example.com/login\",\n    \"claimConfiguration\": {\n        \"dialect\": \"LOCAL\",\n        \"claimMappings\": [\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            },\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            }\n        ],\n        \"requestedClaims\": [\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            },\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            }\n        ],\n        \"subject\": {\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            },\n            \"includeUserDomain\": false,\n            \"includeTenantDomain\": false,\n            \"useMappedLocalSubject\": false\n        },\n        \"role\": {\n            \"mappings\": [\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                },\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                }\n            ],\n            \"includeUserDomain\": true,\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            }\n        }\n    },\n    \"authenticationSequence\": {\n        \"type\": \"DEFAULT\",\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            }\n        ],\n        \"requestPathAuthenticators\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"script\": \"<string>\",\n        \"subjectStepId\": 1,\n        \"attributeStepId\": 1\n    },\n    \"advancedConfigurations\": {\n        \"saas\": false,\n        \"discoverableByEndUsers\": false,\n        \"certificate\": {\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n        },\n        \"skipConsent\": false,\n        \"returnAuthenticatedIdpList\": false,\n        \"enableAuthorization\": true\n    },\n    \"provisioningConfigurations\": {\n        \"inboundProvisioning\": {\n            \"proxyMode\": false,\n            \"provisioningUserstoreDomain\": \"PRIMARY\"\n        },\n        \"outboundProvisioningIdps\": [\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            },\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "applicationId"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"AAA-00000\",\n \"message\": \"Some error message.\",\n \"description\": \"Some error description.\",\n \"traceId\": \"e0fbcfeb-3617-43c4-8dd0-7b7d38e13047\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pickup\",\n    \"description\": \"This is the configuration for Pickup application.\",\n    \"imageUrl\": \"https://example.com/logo/my-logo.png\",\n    \"accessUrl\": \"https://example.com/login\",\n    \"claimConfiguration\": {\n        \"dialect\": \"LOCAL\",\n        \"claimMappings\": [\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            },\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            }\n        ],\n        \"requestedClaims\": [\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            },\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            }\n        ],\n        \"subject\": {\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            },\n            \"includeUserDomain\": false,\n            \"includeTenantDomain\": false,\n            \"useMappedLocalSubject\": false\n        },\n        \"role\": {\n            \"mappings\": [\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                },\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                }\n            ],\n            \"includeUserDomain\": true,\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            }\n        }\n    },\n    \"authenticationSequence\": {\n        \"type\": \"DEFAULT\",\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            }\n        ],\n        \"requestPathAuthenticators\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"script\": \"<string>\",\n        \"subjectStepId\": 1,\n        \"attributeStepId\": 1\n    },\n    \"advancedConfigurations\": {\n        \"saas\": false,\n        \"discoverableByEndUsers\": false,\n        \"certificate\": {\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n        },\n        \"skipConsent\": false,\n        \"returnAuthenticatedIdpList\": false,\n        \"enableAuthorization\": true\n    },\n    \"provisioningConfigurations\": {\n        \"inboundProvisioning\": {\n            \"proxyMode\": false,\n            \"provisioningUserstoreDomain\": \"PRIMARY\"\n        },\n        \"outboundProvisioningIdps\": [\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            },\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "applicationId"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"AAA-00000\",\n \"message\": \"Some error message.\",\n \"description\": \"Some error description.\",\n \"traceId\": \"e0fbcfeb-3617-43c4-8dd0-7b7d38e13047\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pickup\",\n    \"description\": \"This is the configuration for Pickup application.\",\n    \"imageUrl\": \"https://example.com/logo/my-logo.png\",\n    \"accessUrl\": \"https://example.com/login\",\n    \"claimConfiguration\": {\n        \"dialect\": \"LOCAL\",\n        \"claimMappings\": [\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            },\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            }\n        ],\n        \"requestedClaims\": [\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            },\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            }\n        ],\n        \"subject\": {\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            },\n            \"includeUserDomain\": false,\n            \"includeTenantDomain\": false,\n            \"useMappedLocalSubject\": false\n        },\n        \"role\": {\n            \"mappings\": [\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                },\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                }\n            ],\n            \"includeUserDomain\": true,\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            }\n        }\n    },\n    \"authenticationSequence\": {\n        \"type\": \"DEFAULT\",\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            }\n        ],\n        \"requestPathAuthenticators\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"script\": \"<string>\",\n        \"subjectStepId\": 1,\n        \"attributeStepId\": 1\n    },\n    \"advancedConfigurations\": {\n        \"saas\": false,\n        \"discoverableByEndUsers\": false,\n        \"certificate\": {\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n        },\n        \"skipConsent\": false,\n        \"returnAuthenticatedIdpList\": false,\n        \"enableAuthorization\": true\n    },\n    \"provisioningConfigurations\": {\n        \"inboundProvisioning\": {\n            \"proxyMode\": false,\n            \"provisioningUserstoreDomain\": \"PRIMARY\"\n        },\n        \"outboundProvisioningIdps\": [\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            },\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "applicationId"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"AAA-00000\",\n \"message\": \"Some error message.\",\n \"description\": \"Some error description.\",\n \"traceId\": \"e0fbcfeb-3617-43c4-8dd0-7b7d38e13047\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pickup\",\n    \"description\": \"This is the configuration for Pickup application.\",\n    \"imageUrl\": \"https://example.com/logo/my-logo.png\",\n    \"accessUrl\": \"https://example.com/login\",\n    \"claimConfiguration\": {\n        \"dialect\": \"LOCAL\",\n        \"claimMappings\": [\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            },\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            }\n        ],\n        \"requestedClaims\": [\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            },\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            }\n        ],\n        \"subject\": {\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            },\n            \"includeUserDomain\": false,\n            \"includeTenantDomain\": false,\n            \"useMappedLocalSubject\": false\n        },\n        \"role\": {\n            \"mappings\": [\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                },\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                }\n            ],\n            \"includeUserDomain\": true,\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            }\n        }\n    },\n    \"authenticationSequence\": {\n        \"type\": \"DEFAULT\",\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            }\n        ],\n        \"requestPathAuthenticators\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"script\": \"<string>\",\n        \"subjectStepId\": 1,\n        \"attributeStepId\": 1\n    },\n    \"advancedConfigurations\": {\n        \"saas\": false,\n        \"discoverableByEndUsers\": false,\n        \"certificate\": {\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n        },\n        \"skipConsent\": false,\n        \"returnAuthenticatedIdpList\": false,\n        \"enableAuthorization\": true\n    },\n    \"provisioningConfigurations\": {\n        \"inboundProvisioning\": {\n            \"proxyMode\": false,\n            \"provisioningUserstoreDomain\": \"PRIMARY\"\n        },\n        \"outboundProvisioningIdps\": [\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            },\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "applicationId"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"AAA-00000\",\n \"message\": \"Some error message.\",\n \"description\": \"Some error description.\",\n \"traceId\": \"e0fbcfeb-3617-43c4-8dd0-7b7d38e13047\"\n}"
+						},
+						{
+							"name": "Conflict",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pickup\",\n    \"description\": \"This is the configuration for Pickup application.\",\n    \"imageUrl\": \"https://example.com/logo/my-logo.png\",\n    \"accessUrl\": \"https://example.com/login\",\n    \"claimConfiguration\": {\n        \"dialect\": \"LOCAL\",\n        \"claimMappings\": [\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            },\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            }\n        ],\n        \"requestedClaims\": [\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            },\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            }\n        ],\n        \"subject\": {\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            },\n            \"includeUserDomain\": false,\n            \"includeTenantDomain\": false,\n            \"useMappedLocalSubject\": false\n        },\n        \"role\": {\n            \"mappings\": [\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                },\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                }\n            ],\n            \"includeUserDomain\": true,\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            }\n        }\n    },\n    \"authenticationSequence\": {\n        \"type\": \"DEFAULT\",\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            }\n        ],\n        \"requestPathAuthenticators\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"script\": \"<string>\",\n        \"subjectStepId\": 1,\n        \"attributeStepId\": 1\n    },\n    \"advancedConfigurations\": {\n        \"saas\": false,\n        \"discoverableByEndUsers\": false,\n        \"certificate\": {\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n        },\n        \"skipConsent\": false,\n        \"returnAuthenticatedIdpList\": false,\n        \"enableAuthorization\": true\n    },\n    \"provisioningConfigurations\": {\n        \"inboundProvisioning\": {\n            \"proxyMode\": false,\n            \"provisioningUserstoreDomain\": \"PRIMARY\"\n        },\n        \"outboundProvisioningIdps\": [\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            },\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "applicationId"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"AAA-00000\",\n \"message\": \"Some error message.\",\n \"description\": \"Some error description.\",\n \"traceId\": \"e0fbcfeb-3617-43c4-8dd0-7b7d38e13047\"\n}"
+						},
+						{
+							"name": "Successfully Updated",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"pickup\",\n    \"description\": \"This is the configuration for Pickup application.\",\n    \"imageUrl\": \"https://example.com/logo/my-logo.png\",\n    \"accessUrl\": \"https://example.com/login\",\n    \"claimConfiguration\": {\n        \"dialect\": \"LOCAL\",\n        \"claimMappings\": [\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            },\n            {\n                \"applicationClaim\": \"firstname\",\n                \"localClaim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                }\n            }\n        ],\n        \"requestedClaims\": [\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            },\n            {\n                \"claim\": {\n                    \"uri\": \"http://wso2.org/claims/username\"\n                },\n                \"mandatory\": false\n            }\n        ],\n        \"subject\": {\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            },\n            \"includeUserDomain\": false,\n            \"includeTenantDomain\": false,\n            \"useMappedLocalSubject\": false\n        },\n        \"role\": {\n            \"mappings\": [\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                },\n                {\n                    \"localRole\": \"admin\",\n                    \"applicationRole\": \"Administrator\"\n                }\n            ],\n            \"includeUserDomain\": true,\n            \"claim\": {\n                \"uri\": \"http://wso2.org/claims/username\"\n            }\n        }\n    },\n    \"authenticationSequence\": {\n        \"type\": \"DEFAULT\",\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"options\": [\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    },\n                    {\n                        \"idp\": \"LOCAL\",\n                        \"authenticator\": \"basic\"\n                    }\n                ]\n            }\n        ],\n        \"requestPathAuthenticators\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"script\": \"<string>\",\n        \"subjectStepId\": 1,\n        \"attributeStepId\": 1\n    },\n    \"advancedConfigurations\": {\n        \"saas\": false,\n        \"discoverableByEndUsers\": false,\n        \"certificate\": {\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n        },\n        \"skipConsent\": false,\n        \"returnAuthenticatedIdpList\": false,\n        \"enableAuthorization\": true\n    },\n    \"provisioningConfigurations\": {\n        \"inboundProvisioning\": {\n            \"proxyMode\": false,\n            \"provisioningUserstoreDomain\": \"PRIMARY\"\n        },\n        \"outboundProvisioningIdps\": [\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            },\n            {\n                \"idp\": \"Google\",\n                \"connector\": \"googleapps\",\n                \"blocking\": false,\n                \"rules\": false,\n                \"jit\": false\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/:applicationId",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "applicationId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users and Roles",
+			"item": [
+				{
+					"name": "Bulk User Import",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{user-name}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "gu@rdioadmin#47",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/scim+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"failOnErrors\":1,\n   \"schemas\":[\n      \"urn:ietf:params:scim:api:messages:2.0:BulkRequest\"\n   ],\n   \"Operations\":[\n      {\n         \"method\":\"POST\",\n         \"path\":\"/Users\",\n         \"bulkId\":\"ciamdemo\",\n         \"data\":{\n            \"schemas\":[\n               \"urn:ietf:params:scim:schemas:core:2.0:User\"\n            ],\n            \"userName\":\"life-customer/ron@ciamdemo.net\",\n            \"emails\":[\"ron@ciamdemo.net\"],\n            \"password\":\"gu@rdiologin#47\"\n         }\n      },\n      {\n         \"method\":\"POST\",\n         \"path\":\"/Users\",\n         \"bulkId\":\"ciamdemo\",\n         \"data\":{\n            \"schemas\":[\n               \"urn:ietf:params:scim:schemas:core:2.0:User\"\n            ],\n            \"userName\":\"life-customer/mike@ciamdemo.net\",\n            \"emails\":[\"mike@ciamdemo.net\"],\n            \"password\":\"gu@rdiologin#47\"\n         }\n      },\n      {\n         \"method\":\"POST\",\n         \"path\":\"/Users\",\n         \"bulkId\":\"ciamdemo\",\n         \"data\":{\n            \"schemas\":[\n               \"urn:ietf:params:scim:schemas:core:2.0:User\"\n            ],\n            \"userName\":\"life-customer/trixie@ciamdemo.net\",\n            \"emails\":[\"trixie@ciamdemo.net\"],\n            \"password\":\"gu@rdiologin#47\"\n         }\n      }\n   ]\n}"
+						},
+						"url": {
+							"raw": "https://{{server-url}}/scim2/Bulk",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"scim2",
+								"Bulk"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "server-url",
+			"value": "is.wso2isdemo.com"
+		},
+		{
+			"key": "tenant-domain",
+			"value": "carbon.super"
+		},
+		{
+			"key": "access-token",
+			"value": "5289b7cc-acec-39a6-9d27-28c983b2cd5a"
+		}
+	]
+}
+
